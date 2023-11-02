@@ -1,18 +1,21 @@
 import { Outlet } from "@solidjs/router";
-import { Component } from "solid-js";
+import { initFlowbite } from "flowbite";
+import { Component, onMount } from "solid-js";
 import SideBarLayout from "./side-bar/SideBarLayout";
 import TopBarLayout from "./top-bar/TopBarLayout";
 
 const MainLayout: Component = () => {
+  onMount(() => {
+    initFlowbite();
+  });
+
   return (
     <>
-      <div class="antialiased bg-gray-50 dark:bg-gray-900 overflow-x-hidden">
+      <div class="antialiased bg-gray-50 dark:bg-gray-900 overflow-x-hidden h-screen">
         <TopBarLayout />
         <SideBarLayout />
         <main class="p-4 md:ml-64 h-auto pt-20">
-          <div class="h-screen w-screen">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
       </div>
     </>

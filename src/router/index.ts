@@ -1,6 +1,7 @@
 import { RouteDefinition } from "@solidjs/router";
 import { lazy } from "solid-js";
 import { authRoutes } from "../modules/users/modules/auth/router/auth.router";
+import { userRoutes } from "../modules/users/router/user.router";
 import PathName from "./path.enum";
 
 const routes: RouteDefinition[] = [
@@ -16,6 +17,7 @@ const routes: RouteDefinition[] = [
         path: PathName.Setting,
         component: lazy(() => import("../modules/pages/SettingPage")),
       },
+      ...userRoutes,
     ],
   },
   ...authRoutes,
