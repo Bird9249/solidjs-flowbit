@@ -57,4 +57,14 @@ export class UserApiMemory implements IUserApi {
 
     return newUser.data;
   }
+
+  async getOne(id: string): Promise<User> {
+    const data = await axios({
+      url: `http://localhost:3001/users/${id}?_embed=profiles`,
+    });
+
+    data.data.profile = data.data.profiles[0];
+
+    return data.data;
+  }
 }

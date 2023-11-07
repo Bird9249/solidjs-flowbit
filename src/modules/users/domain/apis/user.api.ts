@@ -13,4 +13,6 @@ export interface IUserApi {
   getPagination(search: UserPagination): Promise<IPaginated<User>>;
 
   create(input: CreateUserDto): Promise<User>;
+
+  getOne(id: string): Promise<User>;
 }

@@ -1,10 +1,14 @@
+import { useNavigate } from "@solidjs/router";
 import { Component, For, Show, createEffect } from "solid-js";
 import DotsHorizontalIcon from "../../../../icons/DotsHorizontalIcon";
 import UserPlaceholderIcon from "../../../../icons/UserPlaceholderIcon";
 import { Gender } from "../../domain/entities/profile.entity";
 import { User } from "../../domain/entities/user.entity";
+import UserPathName from "../../router/user-path.enum";
 
 const UserTable: Component<{ data: User[]; loading: boolean }> = (props) => {
+  const navigate = useNavigate();
+
   createEffect(() => {
     props.data;
   });
@@ -140,26 +144,22 @@ const UserTable: Component<{ data: User[]; loading: boolean }> = (props) => {
                 >
                   <li>
                     <a
-                      href="#"
-                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      onClick={() =>
+                        navigate(UserPathName.Index + `/${data.id}`)
+                      }
+                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
                     >
                       Show
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
+                    <a class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer">
                       Edit
                     </a>
                   </li>
                 </ul>
                 <div class="py-1">
-                  <a
-                    href="#"
-                    class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
+                  <a class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white cursor-pointer">
                     Delete
                   </a>
                 </div>
