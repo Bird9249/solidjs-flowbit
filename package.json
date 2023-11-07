@@ -10,10 +10,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "@vitejs/plugin-react": "^4.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@vitejs/plugin-react": "^4.1.1",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.52.0",
+    "eslint": "^8.53.0",
     "eslint-config-standard-with-typescript": "^39.1.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-n": "^16.2.0",
@@ -21,7 +21,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-solid": "^0.13.0",
     "postcss": "^8.4.31",
-    "solid-devtools": "^0.27.7",
+    "solid-devtools": "^0.27.9",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
@@ -35,9 +35,9 @@
     "flowbite": "^1.8.1",
     "moment": "^2.29.4",
     "reflect-metadata": "^0.1.13",
-    "solid-js": "^1.8.4",
+    "solid-js": "^1.8.5",
     "solid-transition-group": "^0.2.3",
     "tsyringe": "^4.8.0",
-    "valibot": "^0.19.0"
+    "valibot": "^0.20.1"
   }
 }

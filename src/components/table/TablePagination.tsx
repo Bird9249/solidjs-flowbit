@@ -2,7 +2,7 @@
 /* eslint-disable solid/reactivity */
 import { Component, createSignal } from "solid-js";
 
-const Table: Component<{
+const TablePagination: Component<{
   itemsPerPage: number;
   totalItems: number;
   currentPage: number;
@@ -149,4 +149,4 @@ const Table: Component<{
   );
 };
 
-export default Table;
+export default TablePagination;

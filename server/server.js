@@ -4,7 +4,7 @@ const userModule = require('./user');
 module.exports = () => {
   const data = {users: [], profiles: []}
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 21; i++) {
    const {user, profile} = userModule.generateUserData()
 
     data.users.push(user);

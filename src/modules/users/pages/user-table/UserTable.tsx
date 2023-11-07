@@ -1,4 +1,3 @@
-import { initDropdowns } from "flowbite";
 import { Component, For, Show, createEffect } from "solid-js";
 import DotsHorizontalIcon from "../../../../icons/DotsHorizontalIcon";
 import UserPlaceholderIcon from "../../../../icons/UserPlaceholderIcon";
@@ -8,7 +7,6 @@ import { User } from "../../domain/entities/user.entity";
 const UserTable: Component<{ data: User[]; loading: boolean }> = (props) => {
   createEffect(() => {
     props.data;
-    initDropdowns();
   });
 
   function badgeGender(gender: Gender) {
@@ -97,7 +95,7 @@ const UserTable: Component<{ data: User[]; loading: boolean }> = (props) => {
                 <Show
                   when={data.profile.profileUrl}
                   fallback={
-                    <UserPlaceholderIcon class="w-8 h-8 text-gray-200 dark:text-gray-700" />
+                    <UserPlaceholderIcon class="w-8 h-8 mr-3 text-gray-200 dark:text-gray-700" />
                   }
                   children={
                     <img

@@ -7,4 +7,8 @@ export const userRoutes: RouteDefinition[] = [
     path: UserPathName.Index,
     component: lazy(() => import("../pages/User")),
   },
+  {
+    path: UserPathName.Create,
+    component: lazy(() => import("../pages/CreateUserPage")),
+  },
 ];

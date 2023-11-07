@@ -1,13 +1,14 @@
 import { SubmitHandler, createForm, valiForm } from "@modular-forms/solid";
 import { A } from "@solidjs/router";
 import { Component } from "solid-js";
+import InputPassword from "../../../../../components/form/InputPassword";
 import InputText from "../../../../../components/form/InputText";
 import BackgroundLogo from "../components/BackgroundLogo";
 import { RegisterForm, TRegisterForm } from "../form/register.form";
 import AuthPathName from "../router/auth-path.enum";
 
 const RegisterPage: Component = () => {
-  const [registerForm, { Form, Field }] = createForm<TRegisterForm>({
+  const [, { Form, Field }] = createForm<TRegisterForm>({
     validate: valiForm(RegisterForm),
   });
 
@@ -29,7 +30,6 @@ const RegisterPage: Component = () => {
                 <InputText
                   label="Your username"
                   {...props}
-                  type="text"
                   value={field.value}
                   error={field.error}
                   placeholder="username"
@@ -41,7 +41,6 @@ const RegisterPage: Component = () => {
                 <InputText
                   label="Your email"
                   {...props}
-                  type="text"
                   value={field.value}
                   error={field.error}
                   placeholder="name@company.com"
@@ -50,10 +49,9 @@ const RegisterPage: Component = () => {
             </Field>
             <Field name="password">
               {(field, props) => (
-                <InputText
+                <InputPassword
                   label="password"
                   {...props}
-                  type="password"
                   value={field.value}
                   error={field.error}
                   placeholder="••••••••"
@@ -62,10 +60,9 @@ const RegisterPage: Component = () => {
             </Field>
             <Field name="confirmPassword">
               {(field, props) => (
-                <InputText
+                <InputPassword
                   label="Confirm password"
                   {...props}
-                  type="password"
                   value={field.value}
                   error={field.error}
                   placeholder="••••••••"
