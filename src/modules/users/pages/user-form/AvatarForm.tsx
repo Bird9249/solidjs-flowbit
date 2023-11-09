@@ -1,10 +1,13 @@
 import { Component, createSignal } from "solid-js";
 import UserPlaceholderIcon from "../../../../icons/UserPlaceholderIcon";
 
-const AvatarForm: Component<{ onSelectFile: (file?: File) => void }> = (
-  props
-) => {
-  const [previewAvatar, setPreviewAvatar] = createSignal<string>();
+const AvatarForm: Component<{
+  onSelectFile: (file?: File) => void;
+  value?: string;
+}> = (props) => {
+  const [previewAvatar, setPreviewAvatar] = createSignal<string>(
+    props.value ? props.value : ""
+  );
 
   const onSelectImage = (e: Event) => {
     if (e.target) {
